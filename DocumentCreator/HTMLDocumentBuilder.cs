@@ -38,22 +38,29 @@ namespace DocumentCreator
             doc.AppendToBody(new HTMLHeading(1, title));
 
             // Write code here: add a second-level heading containing the author
-
+            doc.AppendToBody(new HTMLHeading(2, author));
 
             // Write code here: add a paragraph containing the text
-
+            doc.AppendToBody(new HTMLParagraph(textIn));
         }
 
         public void BuildDocument(String titleIn, String authorIn, String textIn) 
         {
             BuildHeadElement(titleIn, authorIn);
             //Write code here: call the method to build the body
-                        
+            BuildBody(textIn);
+
         }
         // return the document that has built
         public HTMLDocument GetDocument()
         {
             return doc;
+        }
+
+
+        public String GetString()
+        {
+            return doc.GetString();
         }
     }
 }
