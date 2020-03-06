@@ -14,6 +14,14 @@ namespace ShopLab
         }
         public decimal TotalCost { get; set; }
         public decimal WeightInKG { get; set; }
-        
+
+        public Order clone(){
+            var order = new Order
+            {
+                TotalCost = TotalCost,
+                WeightInKG = WeightInKG,
+            };
+            return order; 
+        }
     }
 }
