@@ -1,7 +1,4 @@
-﻿// Project to deonstrate the prototype pattern.
-// Main idea by Dr. Nicholas Sheppard
-
-using System;
+﻿using System;
 
 namespace ShopLab
 {
@@ -9,7 +6,8 @@ namespace ShopLab
     {
         static void Main(string[] args)
         {
-            Order myOrder = new Order(10, 20);               
+            Order myOrder = new Order(10, 20);
+            Console.WriteLine("Order total cost $" + myOrder.TotalCost);
         }
     }
 }
