@@ -28,7 +28,7 @@ namespace DocumentCreator
             author = authorIn;
 
             // Write code here: set the title of the document
-            
+            doc.setTitle(title);
         }
 
         // build the <body> element
