@@ -40,6 +40,11 @@ namespace TwoDArray
             return new TwoDRowMajorIteratorGeneric<T>(this);
         }
 
+        public ITwoDIterator<T> CreateRowReverseIterator()
+        {
+            return new RowReverseIteractorGeneric<T>(this);
+        }
+
         // get the number of columns in the array
         public int Columns()
         {

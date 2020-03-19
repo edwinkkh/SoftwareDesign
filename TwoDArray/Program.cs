@@ -25,6 +25,17 @@ namespace TwoDArray
                 Console.Write(iter.Current() + " ");
                 iter.Next();
             }
+
+            Console.WriteLine("\n--row reverse ---");
+
+            // OUTPUT = 9 4 1, 3 5 2
+            iter = array.CreateRowReverseIterator();
+            while (!iter.IsDone())
+            {
+                Console.Write(iter.Current() + " ");
+                iter.Next();
+            }
+
             Console.WriteLine();
             Console.ReadLine();
         }
