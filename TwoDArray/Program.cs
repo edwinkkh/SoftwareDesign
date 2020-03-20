@@ -36,6 +36,25 @@ namespace TwoDArray
                 iter.Next();
             }
 
+            Console.WriteLine("\n row major");
+            ITwoDArray<string> stringArray = new TwoDArrayGeneric<string>(2, 3);
+            stringArray.Set(0,  0, "Sarah");
+            stringArray.Set(0,  1, null);
+            stringArray.Set(0,  2, "Yixin");
+            stringArray.Set(1,  0, null);
+            stringArray.Set(1,  1, null);
+            stringArray.Set(1,  2, "Faizal");
+
+             ITwoDIterator<string> stringIter = stringArray.CreateRowMajorIterator();
+
+            while (!stringIter.IsDone())
+            {
+                if(stringIter.Current() != null){
+                    Console.Write(stringIter.Current() + " ");
+                }
+                stringIter.Next();
+            }
+
             Console.WriteLine();
             Console.ReadLine();
         }
