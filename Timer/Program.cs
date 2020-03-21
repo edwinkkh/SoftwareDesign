@@ -15,11 +15,14 @@ namespace Timer
 
             // create some alarms
             TextAlarm alarm1 = new TextAlarm("Wake up!");
-            BeepAlarm alarm2 = new BeepAlarm();
+            TextAlarm alarm2 = new TextAlarm("No more sleep!");
+
+            // BeepAlarm alarm2 = new BeepAlarm();
+            // timer.Attach(alarm2);
 
             // attach the alarms to the clock
-            //timer.Attach(alarm1);
-            //timer.Attach(alarm2);
+            timer.Attach(alarm1);
+            timer.Attach(alarm2);
 
             // run the clock for thirty seconds
             timer.Run(3);
