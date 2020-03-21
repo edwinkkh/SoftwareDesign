@@ -10,18 +10,17 @@ namespace Timer
     class Timer
     {
         private List<TextAlarm> _observers = new List<TextAlarm>();
-        private int noTicks;
       
         // repeatedly wait one second, exiting after numberOfTicks iterations
         public void Run(int numberOfTicks)
         {
-            noTicks = numberOfTicks;
-            while (noTicks > 0)
+            while (numberOfTicks > 0)
             {
                 System.Threading.Thread.Sleep(1000);
-                System.Console.WriteLine("Sleeping...\n");
+                System.Console.WriteLine("Sleeping...");
                 Notify();
-                noTicks--;
+                numberOfTicks--;
+                Console.WriteLine("\n");
             }
             System.Environment.Exit(0);
         }
