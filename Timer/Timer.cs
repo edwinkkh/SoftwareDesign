@@ -16,7 +16,7 @@ namespace Timer
                 System.Console.WriteLine("Sleeping...");
                 numberOfTicks--;
             }
-            System.Console.ReadLine();
+            System.Environment.Exit(0);
         }
     }
 }
