@@ -26,7 +26,16 @@ namespace TwoDArray
         // get the current element of the iteration
         public T Current()
         {
-            return collection.Get(i, j);
+            if( collection.Get(i, j) == null){
+                switch(IsDone()){
+                    case false:
+                        Next();
+                        break;
+                }
+                return Current();
+            } else{ 
+                return collection.Get(i, j);
+            }
         }
 
         // move to the next element of the iteration

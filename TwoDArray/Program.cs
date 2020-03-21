@@ -49,9 +49,7 @@ namespace TwoDArray
 
             while (!stringIter.IsDone())
             {
-                if(stringIter.Current() != null){
-                    Console.Write(stringIter.Current() + " ");
-                }
+                Console.Write(stringIter.Current() + " ");
                 stringIter.Next();
             }
 
