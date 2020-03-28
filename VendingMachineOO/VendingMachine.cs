@@ -24,7 +24,7 @@ namespace ICT2106.VendingMachineOO
         // constructor
         public VendingMachine(decimal balance)
         {
-            // assume machine balance only got $4 by default
+            // pass initial balance for vending machine
             MachineBalance = balance;
 
             // start in the idle state with no money inserted
