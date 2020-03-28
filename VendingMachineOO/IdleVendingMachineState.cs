@@ -20,6 +20,12 @@ namespace ICT2106.VendingMachineOO
         {
             // display the greeting
             VM.Display("Welcome to the ICT2106 vending machine!");
+
+            // display not enough balance
+            if (VM.MachineBalance <= 1 || VM.msg == "noenoughchange")
+            {
+                VM.Display("Exact change only");
+            }
         }
 
         // insert money handler

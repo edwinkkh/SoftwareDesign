@@ -10,6 +10,7 @@ namespace ICT2106.VendingMachineOO
 {
     class MakeChangeVendingMachineState : VendingMachineState
     {
+
         // constructor
         public MakeChangeVendingMachineState(VendingMachine VM) : base(VM)
         {
@@ -20,6 +21,11 @@ namespace ICT2106.VendingMachineOO
         {
             // display a message and reset the amount of money in the machine
             VM.Display("Returning change of $" + VM.Amount);
+
+            // update balance balance
+            VM.MachineBalance = VM.MachineBalance - VM.Amount;
+            VM.Display("Machine balance left $" + VM.MachineBalance);
+            
             VM.Amount = 0.0M;
 
             // return to the idle state

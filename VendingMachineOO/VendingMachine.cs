@@ -17,9 +17,16 @@ namespace ICT2106.VendingMachineOO
         // the amount of money inserted by the user
         public decimal Amount { get; set; }
 
+        public decimal MachineBalance {get; set;}
+
+        public string msg {get; set;}
+
         // constructor
-        public VendingMachine()
+        public VendingMachine(decimal balance)
         {
+            // assume machine balance only got $4 by default
+            MachineBalance = balance;
+
             // start in the idle state with no money inserted
             CurrentState = new IdleVendingMachineState(this);
         }

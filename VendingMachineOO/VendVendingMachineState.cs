@@ -26,14 +26,24 @@ namespace ICT2106.VendingMachineOO
             // reduce the amount of money by the cost of the item and print a message
             VM.Amount -= cost;
 
-            // move to the next state
-            if (VM.Amount > 0.0M)
+            // display a message and reset the amount of money in the machine
+            if (VM.Amount == 0.0M)
+            {
+                // no change required; go back to idle
+                VM.EnterState(new IdleVendingMachineState(VM));
+            }
+            else if (VM.MachineBalance >= VM.Amount)
             {
                 // need to give change
                 VM.EnterState(new MakeChangeVendingMachineState(VM));
             }
+
             else
             {
+                VM.Display("Machine do not have money to return change");
+                VM.Display("Cancelled order");
+                VM.msg = "noenoughchange";
+
                 // no change required; go back to idle
                 VM.EnterState(new IdleVendingMachineState(VM));
             }
